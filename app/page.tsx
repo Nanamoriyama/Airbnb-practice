@@ -1,11 +1,11 @@
-import LoadingCards from '@/components/card/LoadingCards';
-import CategoriesList from '@/components/home/CategoriesList';
-import PropertiesContainer from '@/components/home/PropertiesContainer';
-import { Suspense } from 'react';
+import LoadingCards from "@/components/card/LoadingCards";
+import CategoriesList from "@/components/home/CategoriesList";
+import PropertiesContainer from "@/components/home/PropertiesContainer";
+import { Suspense } from "react";
 function HomePage({
   searchParams,
 }: {
-  searchParams: { category?: string; search?: string };
+  searchParams: { category?: string; search?: string }; //typescriptの型一応入れとく為の行
 }) {
   return (
     <section>

@@ -3,6 +3,7 @@ import { Input } from "../ui/input";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa"; // React Iconsを使用してアイコンを追加
 
 function NavSearch() {
   const searchParams = useSearchParams();
@@ -28,16 +29,20 @@ function NavSearch() {
   }, [searchParams.get("search")]);
 
   return (
-    <Input
-      type="text"
-      placeholder="find a property..."
-      className="max-w-xs dark:bg-muted rounded-full"
-      onChange={(e) => {
-        setSearch(e.target.value);
-        handleSearch(e.target.value);
-      }}
-      value={search}
-    />
+    <div className="relative max-w-xs">
+      <Input
+        type="text"
+        placeholder="find a property..."
+        className="w-full dark:bg-muted rounded-full pl-14 py-6" // アイコン分の余白を追加
+        onChange={(e) => {
+          setSearch(e.target.value);
+          handleSearch(e.target.value);
+        }}
+        value={search}
+      />
+      <FaSearch className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-pink-500 rounded-full p-2.5 w-9 h-9" />
+    </div>
   );
 }
+
 export default NavSearch;

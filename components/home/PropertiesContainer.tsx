@@ -1,7 +1,7 @@
-import { fetchProperties } from '@/utils/actions';
-import PropertiesList from './PropertiesList';
-import EmptyList from './EmptyList';
-import type { PropertyCardProps } from '@/utils/types';
+import { fetchProperties } from "@/utils/actions";
+import PropertiesList from "./PropertiesList";
+import EmptyList from "./EmptyList";
+import type { PropertyCardProps } from "@/utils/types";
 
 async function PropertiesContainer({
   category,
@@ -17,9 +17,9 @@ async function PropertiesContainer({
   if (properties.length === 0) {
     return (
       <EmptyList
-        heading='No results.'
-        message='Try changing or removing some of your filters.'
-        btnText='Clear Filters'
+        heading="No results."
+        message="Try changing or removing some of your filters."
+        btnText="Clear Filters"
       />
     );
   }
